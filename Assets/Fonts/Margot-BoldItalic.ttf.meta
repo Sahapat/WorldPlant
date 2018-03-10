@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: c61594b2259e03449acfd6999c8a64e6
+timeCreated: 1520433620
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Margot
+  fontNames:
+  - Margot
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5e7e876503ea6074ab720461aaa3bf86, type: 3}
+  - {fileID: 12800000, guid: a666120ff24bce34691e28017a461118, type: 3}
+  - {fileID: 12800000, guid: 40ed4c2f60ad3404a8e1a347715a04c4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

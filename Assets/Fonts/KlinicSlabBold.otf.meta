@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 82fb1f3f93953774bbe6cfcfc5177fa4
+timeCreated: 1520433654
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Klinic Slab
+  fontNames:
+  - Klinic Slab
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7dd52eb26c72ce24380de40b2b5f6470, type: 3}
+  - {fileID: 12800000, guid: 2ded09e29a8b66b45a3bde96b090f533, type: 3}
+  - {fileID: 12800000, guid: 08254e59f296109438eae4dc06975e64, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
