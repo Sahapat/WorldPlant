@@ -7,6 +7,8 @@ public class FireSeed : MonoBehaviour
     [Header("GameObject")]
     [SerializeField]
     private GameObject SeedPrefab;
+    [SerializeField]
+    private GameObject fireObj;
     
     [Header("Shoot property")]
     [SerializeField]
@@ -25,11 +27,12 @@ public class FireSeed : MonoBehaviour
 
     private GameObject[] SeedPooling;
     private PlantHandler[] SeedScripts;
-
+    private MeshRenderer Mrenderer;
     private void Awake()
     {
         SeedPooling = new GameObject[4];
         SeedScripts = new PlantHandler[4];
+        Mrenderer = fireObj.GetComponent<MeshRenderer>();
     }
     private void Start()
     {
@@ -42,7 +45,7 @@ public class FireSeed : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !controller.isGameEnd)
         {
             for(int i =0;i<SeedPooling.Length;i++)
             {
@@ -53,6 +56,14 @@ public class FireSeed : MonoBehaviour
                 }
             }
         }
+        else if(Input.GetMouseButtonDown(0) && controller.isGamePass)
+        {
+            controller.NextLevel();
+        }
+    }
+    public void setVisible(bool status)
+    {
+        Mrenderer.enabled = status;
     }
     public void toPoolingPos(GameObject obj)
     {

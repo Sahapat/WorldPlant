@@ -14,6 +14,12 @@ public class UIPlantRequire : MonoBehaviour
     [SerializeField]
     private Material[] earthMaterials;
 
+    [Header("Scripts")]
+    [SerializeField]
+    private EarthLevelCreator earthLevelHandlerScript;
+    [SerializeField]
+    private GameController gameControllerScripts;
+
     [Header("Other")]
     [SerializeField]
     private Color endGreenColor;
@@ -22,17 +28,10 @@ public class UIPlantRequire : MonoBehaviour
 
     private int require = 0;
     private int playerPlant = 0;
-    private Vector3 colorGreenPerLevel;
-    private Vector3 colorBluePerLevel;
-    private Vector3 endColorGreen;
-    private Vector3 endColorBlue;
 
     private void Start()
     {
-        earthMaterials[0].color = Color.white;
-        earthMaterials[1].color = Color.white;
-        endColorGreen = new Vector3(endGreenColor.r, endGreenColor.g, endGreenColor.b);
-        endColorBlue = new Vector3(endBlueColor.r, endBlueColor.g, endBlueColor.b);
+        ResetEarth();
     }
     public void UpdateUI(int require)
     {
@@ -49,6 +48,12 @@ public class UIPlantRequire : MonoBehaviour
                 requires[i].color = new Color(0, 0, 0, 0);
             }
         }
+    }
+    public void ResetEarth()
+    {
+        earthMaterials[0].color = Color.white;
+        earthMaterials[1].color = Color.white;
+        playerPlant = 0;
     }
     public void PlantAndUpdate()
     {
@@ -68,9 +73,11 @@ public class UIPlantRequire : MonoBehaviour
         {
             earthMaterials[0].color = endGreenColor;
             earthMaterials[1].color = endBlueColor;
-        }
-        else
-        {
+            gameControllerScripts.FinishPlant();
+            for(int i = 0;i<requires.Length;i++)
+            {
+                requires[i].color = new Color(0, 0, 0, 0); 
+            }
         }
     }
 }
