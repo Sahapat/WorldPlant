@@ -48,7 +48,6 @@ public class Main : MonoBehaviour
     public static GameStatus playerStatus;
     public void ResetGame()
     {
-        playerStatus.LevelType1 = 0;
         playerStatus.Score = 0;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
