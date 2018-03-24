@@ -65,6 +65,24 @@ public class SpinHandler : MonoBehaviour
             Finish();
             SuccessParticle.SetActive(true);
         }
+        if (currentSpeed < 1)
+        {
+            normalSpinCount = normalSpinDuration;
+            speedSpinCount = speedSpinDuration;
+            spinAndTwistCount = spinAndTwistDuration;
+            twistCount = 0;
+            spinDirection = (byte)Random.Range(0, 2);
+            runIndex = Random.Range(0, Spinhirarchy.Length);
+            while (Spinhirarchy.Length >= 3)
+            {
+                int currentIndex = runIndex;
+                runIndex = Random.Range(0, Spinhirarchy.Length);
+                if (currentIndex != runIndex)
+                {
+                    break;
+                }
+            }
+        }
     }
     public void setEarthSpin(byte[] spinHirarchy, float spinSpeedSet)
     {
@@ -198,24 +216,6 @@ public class SpinHandler : MonoBehaviour
                 case 1:
                     transform.Rotate(RotateLeft, currentSpeed * Time.deltaTime, Space.World);
                     break;
-            }
-            if (currentSpeed < 1)
-            {
-                normalSpinCount = normalSpinDuration;
-                speedSpinCount = speedSpinDuration;
-                spinAndTwistCount = spinAndTwistDuration;
-                twistCount = 0;
-                spinDirection = (byte)Random.Range(0, 2);
-                runIndex = Random.Range(0, Spinhirarchy.Length);
-                while (Spinhirarchy.Length >= 3)
-                {
-                    int currentIndex = runIndex;
-                    runIndex = Random.Range(0, Spinhirarchy.Length);
-                    if (currentIndex != runIndex)
-                    {
-                        break;
-                    }
-                }
             }
         }
         else
