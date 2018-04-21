@@ -113,7 +113,6 @@ public class GameController : MonoBehaviour
     {
         if (!(Main.playerStatus.LevelType1 >= 9 && Main.playerStatus.LevelType2 >= 9))
         {
-            StopAllCoroutines();
             earthLevelCreatorScripts.upLevel();
             finishAnim.SetBool("isFinish", false);
             fireSeedScripts.setVisible(true);
