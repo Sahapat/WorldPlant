@@ -58,6 +58,7 @@ public class FireSeed : MonoBehaviour
         }
         else if(Input.GetMouseButtonDown(0) && controller.isGamePass)
         {
+            controller.StopAllCoroutines();
             controller.NextLevel();
         }
     }
